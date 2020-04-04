@@ -5,18 +5,17 @@
        <p>{{servename}}</p> -->
 <input type="text"
        class="form-control"
-       [(ngModel)]="Servename">
-       <p>{{Servename}}</p>      
+       [(ngModel)]="serveName">
+      <!-- <p>{{Servename}}</p> -->     
 <button class="btn btn-primary"
         [disabled] = "!allownewServer"
         (click)="onCreateServer()">Add server</button>
-<p [innerText]="allownewServer"></p>
-<p>{{serverCreationStatus}}</p> 
-<p *ngIf="ServerCreated" else noServer>sername was created with + {{Servename}}</p>
-<ng-template #noServer>
-<p>No server was created!</p>
-</ng-template>
+<!--<p [innerText]="allownewServer"></p>-->
+<!--<p>{{serverCreationStatus}}</p> -->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+<app-server *ngFor="let server of servers"></app-server>
 
 <!-- <app-servers></app-servers>--> 
+
 
 
